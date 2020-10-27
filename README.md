@@ -13,6 +13,8 @@ Make sure to check the rules in the `challenges.md` file, as that does detail th
 
 ### Installation
 - Clone the Repo.
+- Make a copy of the `.env.example` and name it `.env`.
+- Run `php artisan key:generate` to generate an encryption key.
 - If using OSX, follow the instructions for Laravel [Valet](https://laravel.com/docs/8.x/valet).
 - If you are using a Linux Distro or Windows, you should use Laravel [Homestead](https://laravel.com/docs/8.x/homestead).
 - After everything is configured, run `php artisan migrate:fresh --seed`.

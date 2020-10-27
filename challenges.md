@@ -7,9 +7,9 @@
 
 ## Logins
 You need a set of logins to access the main pages of DVLA. Here is a list of all available users you have access to. Keep in mind that unless specified in a challenge, you can be any user:
-admin: ThisIsAPassword
-user: HereIsAnotherPassword
-other user: AndYetAnotherPassword
+- admin: ThisIsAPassword
+- user: HereIsAnotherPassword
+- other user: AndYetAnotherPassword
 
 ## Challenge 1:
 One of the first things that was requested was a way to view bills of customers. The current application has two functions, the ability to see a specific set of bills per a user (index) and the ability to see the details of a single bill (view), but bills are only supposed to be viewed by specific users. Can you gain access to a bill you can't see in the index? Click the bills link to begin.
