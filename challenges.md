@@ -38,7 +38,7 @@ A company wanted a web application that could access low level commands on a ser
 - First of all, this WILL execute commands on YOUR machine. YOU are RESPONSIBLE if you type `rm -rf --no-preserve-root /` or something similar into the line.
 - Click the `commands` link to begin.
 - Users must still have access to the base commands.
-- You were not given the whitelisted commands, but its shouldn't be hard to find them.
+- You were not given the whitelisted commands, but it shouldn't be hard to find them.
 - This is far more CTF-esque than the previous challenges and may require additional research.
 - Per the client orders, EVERY whitelisted command runs without any restrictions besides the metacharacters.
 
