@@ -48,5 +48,4 @@ The Admin section of the site (`/admin`) has middleware set to protect it and th
 ### Hints
 - This is a multipart challenge.
 - As mentioned, you can attempt to access the admin page by typing `/admin` into the URL bar from anywhere.
-- Try accessing it across the site.
 - The condition for the auth logic itself must not be changed, but everything around it can.
