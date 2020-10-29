@@ -41,3 +41,12 @@ A company wanted a web application that could access low level commands on a ser
 - You were not given the whitelisted commands, but it shouldn't be hard to find them.
 - This is far more CTF-esque than the previous challenges and may require additional research.
 - Per the client orders, EVERY whitelisted command runs without any restrictions besides the metacharacters.
+
+## Challenge 4:
+The Admin section of the site (`/admin`) has middleware set to protect it and there's no direct link to it, so there should be no issues. But can you find a way to bypass that?
+
+### Hints
+- This is a multipart challenge.
+- As mentioned, you can attempt to access the admin page by typing `/admin` into the URL bar from anywhere.
+- Try accessing it across the site.
+- The condition for the auth logic itself must not be changed, but everything around it can.

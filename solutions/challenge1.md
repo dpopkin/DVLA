@@ -7,13 +7,26 @@ This is an [Insecure Direct Object Reference](https://portswigger.net/web-securi
 This is caused by the fact that we only validate that the bill ID is a number (see routes/web.php) and not the user ID of who owns it (see BillController::show()).
 
 # Fix:
-In the controller before we load the resource, one potential solution is that we simply need to stop execution if the user does not have access to it. Consider the following potential option:
+In the controller before we load the resource, one potential solution is that we simply need to stop execution if the user does not have access to it. Consider the following simple option using [Gates](https://laravel.com/docs/8.x/authorization#gates):
 `
+    // App\Providers\AuthServiceProvider
+    public function boot()
+    {
+        $this->registerPolicies();
+
+        Gate::define('view-bill', function ($user, $bill) {
+            return $user->id === $post->user_id;
+        });
+    }
+
+    // App\Http\Controllers\BillController
     public function show($id)
     {
-        $bill = Bill::where('id', $id)->first();
-        abort_unless(Auth::id() === $bill->user_id, 403);
-        return view('bills.bill_details', ['bill' => $bill]);
+        $bill = Bill::where('id', $id)->firstOrFail();
+        if (Gate::allows('view-bill', $bill)) {
+            return view('bills.bill_details', ['bill' => $bill]);
+        }
+        abort(403);
     }
 `
-Obviously, this by default will not inform us of a potential attack, but remember that this is only one potential solution.
+Obviously, this by default will not inform us of a potential attack, and you should also consider using [Policies](https://laravel.com/docs/8.x/authorization#creating-policies) depending on the use case. but remember that this is only one potential solution.

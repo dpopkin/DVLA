@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
+    const SUPERADMIN = '@laravel.test';
 
     /**
      * The attributes that are mass assignable.
