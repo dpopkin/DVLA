@@ -19,7 +19,7 @@ One of the first things that was requested was a way to view bills of customers.
 - As long as the index and view pages work, the client is happy.
 - This is a much more common issue than one would expect and you see this specific issue all across the web.
 - Every user has access to different bills.
-- Index is fairly static and doesn't have anywhere to feed it user input other than the view button.
+- Index is fairly static.
 
 ## Challenge 2:
 The next major part of their old codebase was an items database they sold to a small retail store. Like billing, it uses index and view to show all items. But it also gives any user the option to edit the description and location of it in the store. However, due to past abuse, only a super admin can change details like price. You don't have access to the super admin role, but is it still possible to say change the price of the bread to the price of the iPhone and vise-versa?
@@ -32,7 +32,7 @@ The next major part of their old codebase was an items database they sold to a s
 - Assume the column names in the database are as simple as you think they are.
 
 ## Challenge 3:
-A company wanted a web application that could access low level commands on a server ("Use exec()" was their exact words). The developers, rightfully fearing abuse, locked it down to only the commands they needed to do their job with Laravel validation and implemented some string parsing to remove metacharacters. But is it still possible to execute arbitary code?
+A company wanted a web application that could access low level commands on a server ("Use exec()" was their exact words). The developers, rightfully fearing abuse, locked it down to use only the whitelisted commands the company needed to do their job with Laravel validation and implemented some string parsing to remove metacharacters. But is it still possible to execute arbitary code?
 
 ### Hints
 - First of all, this WILL execute commands on YOUR machine. YOU are RESPONSIBLE if you type `rm -rf --no-preserve-root /` or something similar into the line.
@@ -43,9 +43,9 @@ A company wanted a web application that could access low level commands on a ser
 - Per the client orders, EVERY whitelisted command runs without any restrictions besides the metacharacters.
 
 ## Challenge 4:
-The Admin section of the site (`/admin`) has middleware set to protect it and there's no direct link to it, so there should be no issues. But can you find a way to bypass that?
+The Admin section of the site (`/admin`) has middleware set to protect it and there's no direct link to it, so there should be no issues. But can you find a way to access the admin page?
 
 ### Hints
+- The condition for the auth logic itself must not be changed, but everything around it can.
 - This is a multipart challenge.
 - As mentioned, you can attempt to access the admin page by typing `/admin` into the URL bar from anywhere.
-- The condition for the auth logic itself must not be changed, but everything around it can.
