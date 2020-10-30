@@ -8,7 +8,7 @@ This is caused by the fact that we only validate that the bill ID is a number (s
 
 # Fix:
 In the controller before we load the resource, one potential solution is that we simply need to stop execution if the user does not have access to it. Consider the following simple option using [Gates](https://laravel.com/docs/8.x/authorization#gates):
-`
+
     // App\Providers\AuthServiceProvider
     public function boot()
     {
@@ -28,5 +28,5 @@ In the controller before we load the resource, one potential solution is that we
         }
         abort(403);
     }
-`
+
 Obviously, this by default will not inform us of a potential attack, and you should also consider using [Policies](https://laravel.com/docs/8.x/authorization#creating-policies) depending on the use case. but remember that this is only one potential solution.

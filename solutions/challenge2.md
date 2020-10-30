@@ -10,7 +10,6 @@ In the BillController->update() method, we first validate the input of only desc
 # Fix:
 Because price is supposed to be editable by a super admin, we can't just remove the `price` attribute from the fillable section in the Item model and call it a day. So instead, we should check if any abmormal inputs exist and make sure the user is authorized to make that change. Thankfully Laravel includes the authorize method in the ItemRequest for this very reason. For example, and the sake of simplicity, lets say the super admin will always have an ID of 1, in which case we can use something similar to this:
 
-`
     public function authorize()
     {
         if(request()->input('price')) {
@@ -18,4 +17,3 @@ Because price is supposed to be editable by a super admin, we can't just remove 
         }
         return true;
     }
-`
