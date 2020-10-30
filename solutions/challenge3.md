@@ -1,4 +1,4 @@
-# What:
+# What/How to:
 The issue here is good old arbitary code execution. I plan to find at least one more way to execute arbitary code, but if anyone else has any ideas, go ahead and submit a PR. Anyway this issue can be found in multiple steps:
 1. First, we must find out what commands are vulnerable. Trying anything will enumerate a nice list of commands for us.
 2. Some quick testing shows sanitization has been set around most of the major methods of executing multiple commands (';', '&&', '||').

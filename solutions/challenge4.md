@@ -1,4 +1,4 @@
-# What:
+# What/How to:
 This is an [information disclosure](https://portswigger.net/web-security/information-disclosure), leading to the discovery of a logic error:
 1. Go any edit page and then try to access the admin page. You'll see an error that accidentally discloses the issue nicely.
 2. From there, we can easily change the email address in the profile page.

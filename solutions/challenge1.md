@@ -1,4 +1,4 @@
-# What:
+# What/How to:
 This is an [Insecure Direct Object Reference](https://portswigger.net/web-security/access-control/idor) vulnerability. Which basically allows someone to access information just by editing an arbitary ID. You exploit this with the following steps:
 1. Go to the index page and select any bill you do have access to.
 2. Change the number found in the URL until you see a bill you don't have access to.
