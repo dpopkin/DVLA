@@ -26,9 +26,8 @@ class BillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Bill $bill)
     {
-        $bill = Bill::where('id', $id)->firstOrFail();
         return view('bills.bill_details', ['bill' => $bill]);
     }
 }

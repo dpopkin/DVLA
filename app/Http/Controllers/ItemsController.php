@@ -25,9 +25,8 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Item $item)
     {
-        $item = Item::where('id', $id)->first();
         return view('items.details', ['item' => $item]);
     }
 
@@ -37,9 +36,8 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Item $item)
     {
-        $item = Item::where('id', $id)->first();
         return view('items.edit', ['item' => $item]);
     }
 
