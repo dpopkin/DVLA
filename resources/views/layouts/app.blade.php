@@ -43,6 +43,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('command')}}">Command </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('task')}}">Tasks </a>
+                            </li>
                         </ul>
                     @endauth
 

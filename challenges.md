@@ -49,3 +49,13 @@ The Admin section of the site (`/admin`) has middleware set to protect it and th
 - The condition for the auth logic itself must not be changed, but everything around it can.
 - This is a multipart challenge.
 - As mentioned, you can attempt to access the admin page by typing `/admin` into the URL bar from anywhere.
+
+## Challenge 5:
+The company has just started work on a task checklist that uses nothing but JavaScript and Vue.js for now. They want to allow multiple methods of input for tasks, but only JSON is implemented at the moment. They had just started to added permissions on the option to delete, so no one should have access to it yet, but someone on the team managed to access the button. Can you figure out what they did?
+
+### Hints
+- Click `Tasks` to start.
+- Tasks are supposed to be sent in the following JSON format `{"priority":"task"}`. meaning the syntax should look something like: `{"Due Soon":"File Taxes"}`.
+- This is a relatively new issue in the JS world, but we've technically covered this before.
+- Vue is running in development mode. Meaning it should be easy to start debugging it.
+- Try to save a task with the same priority as the first task. What happens?

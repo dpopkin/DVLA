@@ -1,7 +1,7 @@
 ## Damn Vulnerable Laravel App
 
 ### Intro
-Damn Vulnerable Laravel App or DVLA is a lesson on how not to write a Laravel/PHP application. With intentionally misconfigured code and more. While I do include Laravel issues, there are some PHP-centric issues in the application.
+Damn Vulnerable Laravel App or DVLA is a lesson on how not to write a Laravel/PHP/JS based application. With intentionally misconfigured code and more. While I do include Laravel issues, there are some PHP and JavaScript centric issues in the application.
 
 ### Why?
 Let me preface this by saying Laravel is a secure web framework, but like everything in programming, there are some edge cases that people need to be aware of that aren't always fully documented, some of which I've seen more than a few times. For example, there's one issue in this application which can be suprisingly easy to create in Laravel with its defaults. You should also remember that PHP, while much, much better than the days of 4.*, still has [edge cases](https://www.php.net/manual/en/language.types.type-juggling.php) that new developers may not be aware of and could lead to issues down the line. This is also an excuse for me to come up with CTF ideas.
@@ -22,5 +22,5 @@ Make sure to check the rules in the `challenges.md` file, as that does detail th
 1. Finding the issue and exploiting it without looking at the code.
 2. Figuring out why it broke (you can then look at the code).
 3. Creating a fix. 
-- Afterwards, you can read the solution files to find out if you had the right idea on the issue. The file structure is as follows: `challenge{{challenge_number}}.md`.
+- Afterwards, you can read my [blog](https://dpopkin.github.io/) where I cover the issues in detail (or use it if you are stumped).
 

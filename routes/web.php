@@ -27,4 +27,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/command', 'CommandController@home')->name('command');
     Route::post('/command/execute', 'CommandController@execute');
     Route::get('/admin', 'AdminController@index')->middleware('is.admin');
+    Route::get('/task', 'TaskController@index');
 });
