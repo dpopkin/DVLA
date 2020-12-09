@@ -19,7 +19,9 @@
         newAttributes: '',
         currentAPIId: 1,
         errorMessage: '',
-        userData: {},
+        userData: {
+          canDeleteTask: false,
+        },
         taskData: {
           Urgent: 'File expense reports',
         }
@@ -29,11 +31,13 @@
     methods: {
       checkData() {
         try {
+          this.errorMessage = ''
           let task = JSON.parse(this.newAttributes)
           if(task && typeof task === 'object') {
             this.merge(this.taskData, task);
             this.userData = { userNumber: this.currentAPIId};
             this.currentAPIId++;
+            this.$forceUpdate();
           }
           else {
             this.errorMessage = "Item is not valid JSON." 
@@ -42,9 +46,6 @@
           this.errorMessage = "An error has occurred."
         }
         this.newAttributes = ''
-      },
-      deleteItem() {
-
       },
 
       merge(currentData, incomingData) {
