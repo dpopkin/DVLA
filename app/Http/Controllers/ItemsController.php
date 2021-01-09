@@ -48,9 +48,9 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ItemRequest $request, $id)
+    public function update(ItemRequest $request, $item)
     {
-        $item = Item::find($id)->update($request->input());
+        $item = Item::find($item)->update($request->input());
         return back()->with('status', 'Item updated.');
     }
 }
