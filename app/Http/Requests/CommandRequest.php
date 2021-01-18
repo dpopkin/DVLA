@@ -26,7 +26,7 @@ class CommandRequest extends FormRequest
     public function rules()
     {
         return [
-            'command' => 'starts_with:ls,man,touch,echo,open',
+            'command' => 'starts_with:ls,man,touch,echo',
         ];
     }
 }
