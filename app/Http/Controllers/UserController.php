@@ -15,7 +15,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($user)
     {
         $user = User::findorFail(Auth::id());
         return view('users.show', ['user' => $user]);
@@ -27,7 +27,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($user)
     {
         $user = User::findorFail(Auth::id());
         return view('users.edit', ['user' => $user]);
@@ -40,7 +40,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, $id)
+    public function update(UserRequest $request, $user)
     {
         $status = User::findorFail(Auth::id())->update($request->input());
         return back()->with('status', 'Information updated.');

@@ -13,7 +13,7 @@ class BillSeeder extends Seeder
     public function run()
     {
         DB::table('bills')->insert([
-            'user_id' => DB::table('users')->where('name', 'Admin')->first()->id,
+            'user_id' => DB::table('users')->where('name', 'sub-admin')->first()->id,
             'name' => 'Lisa',
             'total' => 12345,
             'address' => '1235 The Room Street'
