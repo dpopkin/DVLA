@@ -14,6 +14,8 @@ Make sure to check the rules in the `challenges.md` file, as that does detail th
 ### Installation
 - Clone the Repo.
 - Make a copy of the `.env.example` file and name it `.env`.
+- Run `composer install`.
+- If using Laravel [sail](https://laravel.com/docs/8.x/sail), simply run all the commands listed below through sail and then run `./vendor/bin/sail up` 
 - If using OSX, follow the instructions for Laravel [Valet](https://laravel.com/docs/8.x/valet).
 - If you are using a Linux Distro or Windows, you should use Laravel [Homestead](https://laravel.com/docs/8.x/homestead).
 - Run `php artisan key:generate` to generate the app key.
